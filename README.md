@@ -14,30 +14,27 @@ Once you have Node.js and npm installed, you can download and run the create-rea
 This plugin allows you to customize a button in your Sigma worksheets. Here are the available options:
 
 - `buttonText`: This option allows you to set the text that appears on the button. 
-    The default value is "Click me". You can provide any string value as the button text.
+    The default value is "Click Me". You can provide any string value as the button text.
+
+- `buttonTextFont`: This option allows you to set the font of the button text. 
+    The default value is "Arial". You can provide any valid CSS font value.
+
+- `buttonTextSize`: This option allows you to set the size of the button text. 
+    The default value is "16". You can provide any valid CSS font size value.
+
+- `buttonTextColor`: This option allows you to set the color of the button text. 
+    The default value is "000000" (black). You can provide any valid CSS color value.
 
 - `buttonColor`: This option allows you to set the color of the button. 
-    The default value is "red". You can provide any valid CSS color value.
-
-- `buttonSize`: This option allows you to set the size of the button. 
-    The default value is "large". Other valid values include "small", "medium", and "extra-large".
-
-- `buttonType`: This option allows you to set the type of the button. 
-    The default value is "primary". Other valid values include "secondary", "success", "danger", "warning", and "info".
-
-- `buttonGhost`: This option allows you to set whether the button has a ghost effect. 
-    The default value is "false". You can provide "true" to enable the ghost effect.
-
-- `buttonBlock`: This option allows you to set whether the button should take up the full width of its container. 
-    The default value is "false". You can provide "true" to make the button block level.
+    The default value is "ffffff" (white). You can provide any valid CSS color value.
 
 - `buttonMargin`: This option allows you to set the margin around the button. 
-    The default value is "10px". You can provide any valid CSS margin value.
+    The default value is "10". You can provide any valid CSS margin value.
 
 - `buttonPadding`: This option allows you to set the padding inside the button. 
-    The default value is "10px". You can provide any valid CSS padding value.
+    The default value is "0". You can provide any valid CSS padding value.
 
 - `buttonBorderRadius`: This option allows you to set the border radius of the button. 
-    The default value is "5px". You can provide any valid CSS border radius value.
+    The default value is "5". You can provide any valid CSS border radius value.
 
 Please note that all these options are optional. If you do not provide a value for an option, the default value will be used.

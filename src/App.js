@@ -5,8 +5,6 @@ import { Button } from 'antd';
 import {
  client,
  useConfig,
- useElementColumns,
- useElementData,
 } from "@sigmacomputing/plugin";
 
 
@@ -17,15 +15,13 @@ client.config.configureEditorPanel([
   { name: "buttonTextSize", label: "Button Text Size (px)", type: "text", defaultValue: "16", source: "ButtonFormat"},
   { name: "buttonTextColor", label: "Button Text Color (Hex)", type: "text", defaultValue: "000000", source: "ButtonFormat"},
   { name: "buttonColor", label: "Button Color (Hex)", type: "text", defaultValue: "ffffff", source: "ButtonFormat"},
-  { name: "buttonMargin", label: "Button Margin (em)", type: "text", defaultValue: "10px", source: "ButtonFormat"},
-  { name: "buttonPadding", label: "Button Padding (em)", type: "text", defaultValue: "0px", source: "ButtonFormat"},
+  { name: "buttonMargin", label: "Button Margin (em)", type: "text", defaultValue: "10", source: "ButtonFormat"},
+  { name: "buttonPadding", label: "Button Padding (em)", type: "text", defaultValue: "0", source: "ButtonFormat"},
   { name: "buttonBorderRadius",label: "Button Border Radius (px)", type: "text", defaultValue: "5", source: "ButtonFormat"},
 ]);
 
 const App = () => {
  const config = useConfig();
- const sigmaCols = useElementColumns(config.source);
- const sigmaData = useElementData(config.source);
 
   return (
     <Button 
@@ -58,3 +54,4 @@ const App = () => {
 }
 
 export default App;
+
