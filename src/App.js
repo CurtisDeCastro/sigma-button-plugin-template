@@ -2,9 +2,12 @@ import React from 'react';
 import './App.css';
 import { Button } from 'antd';
 
+
 import {
  client,
  useConfig,
+ useElementData,
+ useElementColumns,
 } from "@sigmacomputing/plugin";
 
 
@@ -18,10 +21,29 @@ client.config.configureEditorPanel([
   { name: "buttonMargin", label: "Button Margin (em)", type: "text", defaultValue: "10", source: "ButtonFormat"},
   { name: "buttonPadding", label: "Button Padding (em)", type: "text", defaultValue: "0", source: "ButtonFormat"},
   { name: "buttonBorderRadius",label: "Button Border Radius (px)", type: "text", defaultValue: "5", source: "ButtonFormat"},
+  { name: "data", type: "element" },
+  {
+    name: "Inputs",
+    type: "column",
+    source: "data",
+    allowMultiple: true,
+    allowedTypes: ['datetime', 'integer', 'text', 'boolean', 'number']
+  },
+  { name: "actions", label: "Click Actions", type: "group"},
+  { name: "code",label: "Code", type: "text", defaultValue: "console.log(config)", source: "actions"},
 ]);
 
 const App = () => {
+
+
  const config = useConfig();
+ const rawSigmaData = useElementData(config.data);
+ const sigmaData = Object.keys(rawSigmaData).reduce((acc, key) => {
+   const newKey = key.split('/').pop().toLowerCase();
+   acc[newKey] = rawSigmaData[key];
+   return acc;
+ }, {});
+ const sigmaCols = useElementColumns(config.data);
 
   return (
     <Button 
@@ -44,8 +66,7 @@ const App = () => {
       }}
       size={config.buttonSize}
       onClick={() => {
-        console.log('Hello World');
-        // Add your click actions here
+        eval(config.code);
       }}
     >
       {config.buttonText || "Click Me"}
