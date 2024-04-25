@@ -32,13 +32,11 @@ client.config.configureEditorPanel([
   { name: "buttonPadding", label: "Padding (em)", type: "text", defaultValue: "0", source: "ButtonFormat"},
   { name: "buttonBorderRadius",label: "Border Radius (px)", type: "text", defaultValue: "5", source: "ButtonFormat"},
   { name: "TextboxFormat", label: "Textbox Style", type: "group"},
-  { name: "TextboxPadding", label: "Padding", type: "text", defaultValue: "10", source: "TextboxFormat"},
-  { name: "TextboxFontSize", label: "Font Size", type: "text", defaultValue: "10", source: "TextboxFormat"},
-  { name: "TextboxPadding", label: "Padding", type: "text", defaultValue: "10", source: "TextboxFormat"},
-  { name: "TextboxPadding", label: "Padding", type: "text", defaultValue: "10", source: "TextboxFormat"},
-  { name: "TextboxTextColor", label: "Text Color", type: "text", defaultValue: "white", source: "TextboxFormat"},
-  { name: "TextboxAlign", label: "Text Alignment", type: "text", defaultValue: "center", source: "TextboxFormat"},
-  { name: "TextboxBackground", label: "Text Alignment", type: "text", defaultValue: "none", source: "TextboxFormat"},
+  { name: "TextboxFontSize", label: "Font Size (pt)", type: "text", defaultValue: "10", source: "TextboxFormat"},
+  { name: "TextboxPadding", label: "Padding (px)", type: "text", defaultValue: "10", source: "TextboxFormat"},
+  { name: "TextboxTextColor", label: "Text Color (Any CSS)", type: "text", defaultValue: "white", source: "TextboxFormat"},
+  { name: "TextboxAlign", label: "Text Alignment (Any CSS)", type: "text", defaultValue: "center", source: "TextboxFormat"},
+  { name: "TextboxBackground", label: "Background Color (Any CSS)", type: "text", defaultValue: "none", source: "TextboxFormat"},
 ]);
 
 const App = () => {
