@@ -45,16 +45,16 @@ const App = () => {
   const config = useConfig();
   const rawSigmaData = useElementData(config.data);
 
-  const sigmaData = Object.keys(rawSigmaData).reduce((acc, key) => {
+  const sigmaData = Object.keys(rawSigmaData).reduce((acc, key) => { // eslint-disable-line no-unused-vars
     const newKey = key.split('/').pop().toLowerCase();
     acc[newKey] = rawSigmaData[key];
     return acc;
   }, {});
-  const sigmaCols = useElementColumns(config.data);
+  const sigmaCols = useElementColumns(config.data); // eslint-disable-line no-unused-vars
 
   const [callResult, setCallResult] = React.useState('');
 
-  const Return = setCallResult;
+  const Return = setCallResult; // eslint-disable-line no-unused-vars
 
   return (
     <div style={{display: 'flex', flexDirection: 'column', height: '100%'}}>
@@ -78,7 +78,7 @@ const App = () => {
         }}
         size={config.buttonSize}
         onClick={() => {
-          eval(config.code);
+          eval(config.code); // eslint-disable-line no-eval
         }}
       >
         {config.buttonText || "Click Me"}
