@@ -119,3 +119,49 @@ This plugin allows you to customize a textbox in your Sigma worksheets. Here are
     The default value is "none". You can provide any valid CSS color value.
 
 Please note that all these options are optional. If you do not provide a value for an option, the default value will be used.
+
+## Code Examples
+
+Hello World
+```console.log('Hello World')```
+
+Log Sigma Data
+```console.log(sigmaData)```
+
+Log Columns Within Sigma Data
+```console.log(sigmaData.column_name)```
+
+Return Auth Token: 
+```
+function requestAuthToken() {
+    const postData = new URLSearchParams({
+      grant_type: 'client_credentials',
+      client_id: <client-id>,
+      client_secret: <client_secret>
+    });
+
+    const headers = new Headers({
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Cookie': <cookie>
+    });
+
+    const requestOptions = {
+      method: 'POST',
+      headers: headers,
+      body: postData,
+      redirect: 'follow'
+    };
+
+    fetch(<base-url>, requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+  }
+
+  requestAuthToken();
+```
+
+Print Text to Screen
+```
+Return(`Humanity has the stars in its future, and that future is too important to be lost under the burden of juvenile folly and ignorant superstition. I do not fear computers. I fear the lack of them. The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom. - Isaac Asimov`);
+```
