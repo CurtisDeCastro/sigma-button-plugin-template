@@ -122,16 +122,16 @@ Please note that all these options are optional. If you do not provide a value f
 
 ## Code Examples
 
-Hello World
+Execute Hello World onClick: 
 ```console.log('Hello World')```
 
-Log Sigma Data
+Log Sigma Data to Console: 
 ```console.log(sigmaData)```
 
-Log Columns Within Sigma Data
+Log Array of Column Values from Sigma Data:
 ```console.log(sigmaData.column_name)```
 
-Return Auth Token: 
+Return Sigma API Auth Token: 
 ```
 function requestAuthToken() {
     const postData = new URLSearchParams({
@@ -154,11 +154,11 @@ function requestAuthToken() {
 
     fetch(<base-url>, requestOptions)
       .then(response => response.text())
-      .then(result => console.log(result))
+      .then(result => Return(result))
       .catch(error => console.log('error', error));
-  }
+}
 
-  requestAuthToken();
+requestAuthToken();
 ```
 
 Print Text to Screen
